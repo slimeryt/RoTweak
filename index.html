@@ -1,0 +1,89 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RoTweak</title>
+    <style>
+      :root {
+        color-scheme: light dark;
+        --bg: #121215;
+        --fg: #f7f7f8;
+        --muted: #bcbec8;
+        --link: #7aa2ff;
+        --card: #191a1f;
+        --stroke: rgba(208, 217, 251, 0.12);
+      }
+      @media (prefers-color-scheme: light) {
+        :root {
+          --bg: #f7f7f8;
+          --fg: #202227;
+          --muted: #6a6f81;
+          --link: #335fff;
+          --card: #ffffff;
+          --stroke: rgba(27, 37, 75, 0.12);
+        }
+      }
+      body {
+        margin: 0;
+        font-family: "Segoe UI", system-ui, sans-serif;
+        background: var(--bg);
+        color: var(--fg);
+        line-height: 1.55;
+      }
+      main {
+        max-width: 36rem;
+        margin: 0 auto;
+        padding: 3rem 1.25rem 4rem;
+      }
+      .mark {
+        width: 48px;
+        height: 48px;
+        border-radius: 10px;
+        display: grid;
+        place-items: center;
+        background: #335fff;
+        color: #fff;
+        font-weight: 700;
+        margin-bottom: 1rem;
+      }
+      h1 { margin: 0 0 0.5rem; font-size: 2rem; }
+      .lede { color: var(--muted); margin: 0 0 1.5rem; }
+      .card {
+        border: 1px solid var(--stroke);
+        background: var(--card);
+        border-radius: 12px;
+        padding: 1rem 1.1rem;
+        margin-bottom: 1rem;
+      }
+      a { color: var(--link); }
+      ul { margin: 0.5rem 0 0; padding-left: 1.2rem; }
+    </style>
+  </head>
+  <body>
+    <main>
+      <div class="mark" aria-hidden="true">RT</div>
+      <h1>RoTweak</h1>
+      <p class="lede">
+        A personal Roblox website quality-of-life browser extension.
+        Unofficial — not affiliated with Roblox Corporation.
+      </p>
+
+      <div class="card">
+        <strong>Install</strong>
+        <ul>
+          <li>Open your browser’s extensions page</li>
+          <li>Enable Developer mode</li>
+          <li>Load unpacked → select the RoTweak folder</li>
+          <li>Accept the agreement, then Connect Roblox</li>
+        </ul>
+      </div>
+
+      <p>
+        <a href="./privacy.html">Privacy Policy</a>
+        ·
+        <a href="./terms.html">Terms of Use</a>
+      </p>
+    </main>
+  </body>
+</html>
