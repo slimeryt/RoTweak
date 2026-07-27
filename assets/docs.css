@@ -298,7 +298,14 @@ body.docs a {
   font-size: 0.92rem;
 }
 
-.docs-footer {
+.docs-content kbd {
+  font-family: var(--mono);
+  font-size: 0.85em;
+  padding: 0.12rem 0.4rem;
+  border-radius: 5px;
+  border: 1px solid var(--stroke);
+  background: var(--bg-card);
+}
   margin-top: 3rem;
   padding-top: 1.25rem;
   border-top: 1px solid var(--stroke);

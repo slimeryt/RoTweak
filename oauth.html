@@ -3,69 +3,69 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RoTweak Docs — Connect Roblox</title>
+    <title>RoTweak — Connect Roblox</title>
     <link rel="stylesheet" href="./assets/docs.css" />
   </head>
   <body class="docs" data-page="oauth">
     <article class="docs-article">
-      <h1>Connect Roblox (OAuth)</h1>
+      <h1>Connect Roblox</h1>
       <p class="docs-lede">
-        RoTweak uses Roblox Open Cloud OAuth with PKCE — a public client with no client
-        secret stored in the extension.
+        Optional sign-in that lets RoTweak know who you are and use Roblox’s official
+        APIs on your behalf.
       </p>
 
-      <h2>1. Create an OAuth app</h2>
+      <h2>Why connect?</h2>
+      <p>
+        Many RoTweak features talk to Roblox while you browse — loading inventory,
+        friends, avatar items, transactions, or your account privacy settings. Connecting
+        is the safe way to do that without typing your password into the extension.
+      </p>
+      <p>
+        Roblox opens a normal login window. RoTweak never sees your password — only
+        tokens stored locally on your device.
+      </p>
+
+      <h2>How to connect</h2>
       <ol>
-        <li>
-          Open
-          <a href="https://create.roblox.com/dashboard/credentials" target="_blank" rel="noopener noreferrer">Creator Dashboard → Credentials</a>.
-        </li>
-        <li>Create an <strong>OAuth 2.0</strong> app (public / PKCE).</li>
-        <li>Add scopes: <code>openid</code> and <code>profile</code>.</li>
-        <li>
-          Set privacy policy URL:
-          <code>https://slimeryt.github.io/RoTweak/privacy.html</code>
-        </li>
-        <li>
-          Set terms URL (if required):
-          <code>https://slimeryt.github.io/RoTweak/terms.html</code>
-        </li>
+        <li>Open Roblox or click the RoTweak extension icon.</li>
+        <li>Click <strong>Connect Roblox</strong> (or <strong>Connect</strong> in the first-run panel).</li>
+        <li>Sign in on Roblox’s page if asked, and approve access.</li>
+        <li>Return to Roblox — connected features will start working.</li>
       </ol>
 
-      <h2>2. Redirect URI</h2>
-      <p>Load the unpacked extension once, then copy your redirect URI:</p>
-      <ul>
-        <li>Open <strong>RoTweak Options</strong> — the redirect URI is shown under Roblox connection.</li>
-        <li>
-          Or run in the extension service worker console:
-          <code>chrome.identity.getRedirectURL()</code>
-        </li>
-      </ul>
-      <p>It looks like:</p>
-      <pre><code>https://&lt;extension-id&gt;.chromiumapp.org/</code></pre>
-      <p>Paste that <strong>exact</strong> URI into your OAuth app’s allowed redirect URLs.</p>
+      <h2>What RoTweak can access</h2>
+      <p>
+        Connection uses Roblox Open Cloud with basic profile scopes. RoTweak uses this to
+        identify you and call APIs needed for the features you turn on. It does not run
+        a separate server that collects your data — see the
+        <a href="./privacy.html">Privacy Policy</a>.
+      </p>
 
-      <h2>3. Client ID</h2>
-      <p>For self-hosted / developer builds, paste the OAuth Client ID into <code>shared/oauth.js</code>:</p>
-      <pre><code>const CLIENT_ID = "your-client-id-here";</code></pre>
-      <p>Reload the extension, accept the agreement, and click <strong>Connect Roblox</strong>.</p>
+      <h2>How to disconnect</h2>
+      <ul>
+        <li><strong>Popup or options</strong> — click <strong>Disconnect</strong>.</li>
+        <li><strong>Clear storage</strong> in options — removes tokens and all settings.</li>
+        <li><strong>Roblox account</strong> — revoke RoTweak in your Roblox connected apps / OAuth settings.</li>
+        <li><strong>Uninstall</strong> the extension — removes everything from your browser.</li>
+      </ul>
 
       <div class="docs-callout">
         <p>
-          <strong>Never</strong> put a client secret in the extension package. Clear
-          storage in options removes local tokens. Revoking the app in Roblox account
-          settings also ends access.
+          If connect fails, wait a moment and try again. Make sure pop-ups aren’t blocked
+          for Roblox. If you use multiple browser profiles, connect in the same profile
+          where RoTweak is installed.
         </p>
       </div>
 
-      <h2>Troubleshooting</h2>
-      <ul>
-        <li><strong>Redirect mismatch</strong> — URI must match character-for-character, including trailing slash.</li>
-        <li><strong>Invalid client</strong> — check Client ID and that the OAuth app is approved.</li>
-        <li><strong>Context invalidated</strong> — reload extension after code changes, refresh Roblox tabs.</li>
-      </ul>
+      <h2>Do I have to connect?</h2>
+      <p>
+        Some tweaks (like hiding sponsored content or showing server regions on public
+        lists) work without connecting. Anything that needs <em>your</em> inventory,
+        friends, avatar, or private account data requires a connection.
+      </p>
 
       <footer class="docs-footer">
+        <a href="./privacy.html">Privacy Policy</a> ·
         <a href="./getting-started.html">← Getting started</a>
       </footer>
     </article>

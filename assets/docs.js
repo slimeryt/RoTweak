@@ -1,12 +1,13 @@
 (function () {
   const NAV = [
     {
-      label: "Guide",
+      label: "Help",
       items: [
         { id: "home", href: "./index.html", title: "Overview" },
         { id: "getting-started", href: "./getting-started.html", title: "Getting started" },
+        { id: "using", href: "./using-rotweak.html", title: "Using RoTweak" },
         { id: "oauth", href: "./oauth.html", title: "Connect Roblox" },
-        { id: "features", href: "./features.html", title: "Features" },
+        { id: "features", href: "./features.html", title: "All features" },
       ],
     },
     {
@@ -48,7 +49,7 @@
         <span class="docs-mark" aria-hidden="true">RT</span>
         <span class="docs-brand-text">
           <strong>RoTweak</strong>
-          <span>Documentation</span>
+          <span>Help &amp; guide</span>
         </span>
       </a>
       ${navHtml}
