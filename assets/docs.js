@@ -46,7 +46,7 @@
   shell.innerHTML = `
     <aside class="docs-sidebar" aria-label="Documentation">
       <a class="docs-brand" href="./index.html">
-        <span class="docs-mark" aria-hidden="true">RT</span>
+        <img class="docs-mark" src="./assets/logo.png" alt="" width="36" height="36" aria-hidden="true" />
         <span class="docs-brand-text">
           <strong>RoTweak</strong>
           <span>Help &amp; guide</span>
@@ -57,7 +57,7 @@
     <div class="docs-main">
       <div class="docs-topbar">
         <a class="docs-brand" href="./index.html">
-          <span class="docs-mark" aria-hidden="true">RT</span>
+          <img class="docs-mark" src="./assets/logo.png" alt="" width="36" height="36" aria-hidden="true" />
           <span class="docs-brand-text"><strong>RoTweak</strong></span>
         </a>
         <button type="button" class="docs-menu-btn" aria-expanded="false" aria-controls="docs-sidebar">
