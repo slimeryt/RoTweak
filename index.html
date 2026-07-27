@@ -3,87 +3,68 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>RoTweak</title>
-    <style>
-      :root {
-        color-scheme: light dark;
-        --bg: #121215;
-        --fg: #f7f7f8;
-        --muted: #bcbec8;
-        --link: #7aa2ff;
-        --card: #191a1f;
-        --stroke: rgba(208, 217, 251, 0.12);
-      }
-      @media (prefers-color-scheme: light) {
-        :root {
-          --bg: #f7f7f8;
-          --fg: #202227;
-          --muted: #6a6f81;
-          --link: #335fff;
-          --card: #ffffff;
-          --stroke: rgba(27, 37, 75, 0.12);
-        }
-      }
-      body {
-        margin: 0;
-        font-family: "Segoe UI", system-ui, sans-serif;
-        background: var(--bg);
-        color: var(--fg);
-        line-height: 1.55;
-      }
-      main {
-        max-width: 36rem;
-        margin: 0 auto;
-        padding: 3rem 1.25rem 4rem;
-      }
-      .mark {
-        width: 48px;
-        height: 48px;
-        border-radius: 10px;
-        display: grid;
-        place-items: center;
-        background: #335fff;
-        color: #fff;
-        font-weight: 700;
-        margin-bottom: 1rem;
-      }
-      h1 { margin: 0 0 0.5rem; font-size: 2rem; }
-      .lede { color: var(--muted); margin: 0 0 1.5rem; }
-      .card {
-        border: 1px solid var(--stroke);
-        background: var(--card);
-        border-radius: 12px;
-        padding: 1rem 1.1rem;
-        margin-bottom: 1rem;
-      }
-      a { color: var(--link); }
-      ul { margin: 0.5rem 0 0; padding-left: 1.2rem; }
-    </style>
+    <title>RoTweak Docs — Overview</title>
+    <meta
+      name="description"
+      content="Documentation for RoTweak, an unofficial Roblox website quality-of-life browser extension."
+    />
+    <link rel="stylesheet" href="./assets/docs.css" />
   </head>
-  <body>
-    <main>
-      <div class="mark" aria-hidden="true">RT</div>
-      <h1>RoTweak</h1>
-      <p class="lede">
-        A personal Roblox website quality-of-life browser extension.
-        Unofficial — not affiliated with Roblox Corporation.
+  <body class="docs" data-page="home">
+    <article class="docs-article">
+      <h1>RoTweak documentation</h1>
+      <p class="docs-lede">
+        Unofficial browser extension for Roblox website quality-of-life — servers,
+        profiles, inventory, chat, and more. Not affiliated with Roblox Corporation.
       </p>
 
-      <div class="card">
-        <strong>Install</strong>
-        <ul>
-          <li>Open your browser’s extensions page</li>
-          <li>Enable Developer mode</li>
-          <li>Load unpacked → select the RoTweak folder</li>
-          <li>Accept the agreement, then Connect Roblox</li>
-        </ul>
+      <div class="docs-grid">
+        <a class="docs-card" href="./getting-started.html">
+          <strong>Getting started</strong>
+          <span>Install the extension and open the RoTweak panel on roblox.com.</span>
+        </a>
+        <a class="docs-card" href="./oauth.html">
+          <strong>Connect Roblox</strong>
+          <span>Set up Open Cloud OAuth (PKCE) for identity and API access.</span>
+        </a>
+        <a class="docs-card" href="./features.html">
+          <strong>Features</strong>
+          <span>Every toggle in settings, grouped by category.</span>
+        </a>
+        <a class="docs-card" href="./privacy.html">
+          <strong>Privacy Policy</strong>
+          <span>What RoTweak stores locally and what it does not collect.</span>
+        </a>
       </div>
 
+      <h2>What RoTweak does</h2>
       <p>
-        <a href="./privacy.html">Privacy Policy</a>
-        ·
-        <a href="./terms.html">Terms of Use</a>
+        RoTweak runs only on <code>roblox.com</code> in your browser. It adds an
+        in-page settings drawer, optional reimagined pages (profile, inventory,
+        friends, transactions), server region tools, a command palette, and
+        performance/privacy tweaks — all toggled from settings.
       </p>
-    </main>
+
+      <div class="docs-callout">
+        <p>
+          <strong>First run:</strong> accept the agreement, then connect your Roblox
+          account via OAuth. Settings live in <code>chrome.storage</code> on your
+          device; tokens stay local until you disconnect or clear storage.
+        </p>
+      </div>
+
+      <h2>Where to configure</h2>
+      <ul>
+        <li><strong>On Roblox</strong> — click the RoTweak button in the site header.</li>
+        <li><strong>Popup</strong> — master enable, connect/disconnect, quick access.</li>
+        <li><strong>Options</strong> — full settings page with search and account privacy.</li>
+        <li><strong>Command palette</strong> — <code>Ctrl+K</code> / <code>⌘K</code> when enabled.</li>
+      </ul>
+
+      <footer class="docs-footer">
+        RoTweak is a fan project. Roblox® is a trademark of Roblox Corporation.
+      </footer>
+    </article>
+    <script src="./assets/docs.js"></script>
   </body>
 </html>

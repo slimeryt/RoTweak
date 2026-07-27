@@ -4,45 +4,12 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>RoTweak — Terms of Use</title>
-    <style>
-      :root {
-        color-scheme: light dark;
-        --bg: #121215;
-        --fg: #f7f7f8;
-        --muted: #bcbec8;
-        --link: #7aa2ff;
-      }
-      @media (prefers-color-scheme: light) {
-        :root {
-          --bg: #ffffff;
-          --fg: #202227;
-          --muted: #6a6f81;
-          --link: #335fff;
-        }
-      }
-      body {
-        margin: 0;
-        font-family: "Segoe UI", system-ui, sans-serif;
-        background: var(--bg);
-        color: var(--fg);
-        line-height: 1.55;
-      }
-      main {
-        max-width: 40rem;
-        margin: 0 auto;
-        padding: 2.5rem 1.25rem 4rem;
-      }
-      h1 { font-size: 1.75rem; margin: 0 0 0.35rem; }
-      .meta { color: var(--muted); font-size: 0.9rem; margin: 0 0 1.75rem; }
-      h2 { font-size: 1.1rem; margin: 1.75rem 0 0.5rem; }
-      a { color: var(--link); }
-      ul { padding-left: 1.2rem; }
-    </style>
+    <link rel="stylesheet" href="./assets/docs.css" />
   </head>
-  <body>
-    <main>
-      <h1>RoTweak Terms of Use</h1>
-      <p class="meta">Last updated: July 26, 2026</p>
+  <body class="docs" data-page="terms">
+    <article class="docs-article">
+      <h1>Terms of Use</h1>
+      <p class="docs-meta">Last updated: July 26, 2026</p>
 
       <p>
         By installing or using RoTweak, you agree to these terms. If you do not agree,
@@ -95,7 +62,10 @@
         update means you accept the revised terms.
       </p>
 
-      <p><a href="./">Back</a> · <a href="./privacy.html">Privacy Policy</a></p>
-    </main>
+      <footer class="docs-footer">
+        See also <a href="./privacy.html">Privacy Policy</a> · <a href="./index.html">Documentation home</a>
+      </footer>
+    </article>
+    <script src="./assets/docs.js"></script>
   </body>
 </html>

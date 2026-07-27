@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RoTweak Docs — Connect Roblox</title>
+    <link rel="stylesheet" href="./assets/docs.css" />
+  </head>
+  <body class="docs" data-page="oauth">
+    <article class="docs-article">
+      <h1>Connect Roblox (OAuth)</h1>
+      <p class="docs-lede">
+        RoTweak uses Roblox Open Cloud OAuth with PKCE — a public client with no client
+        secret stored in the extension.
+      </p>
+
+      <h2>1. Create an OAuth app</h2>
+      <ol>
+        <li>
+          Open
+          <a href="https://create.roblox.com/dashboard/credentials" target="_blank" rel="noopener noreferrer">Creator Dashboard → Credentials</a>.
+        </li>
+        <li>Create an <strong>OAuth 2.0</strong> app (public / PKCE).</li>
+        <li>Add scopes: <code>openid</code> and <code>profile</code>.</li>
+        <li>
+          Set privacy policy URL:
+          <code>https://slimeryt.github.io/RoTweak/privacy.html</code>
+        </li>
+        <li>
+          Set terms URL (if required):
+          <code>https://slimeryt.github.io/RoTweak/terms.html</code>
+        </li>
+      </ol>
+
+      <h2>2. Redirect URI</h2>
+      <p>Load the unpacked extension once, then copy your redirect URI:</p>
+      <ul>
+        <li>Open <strong>RoTweak Options</strong> — the redirect URI is shown under Roblox connection.</li>
+        <li>
+          Or run in the extension service worker console:
+          <code>chrome.identity.getRedirectURL()</code>
+        </li>
+      </ul>
+      <p>It looks like:</p>
+      <pre><code>https://&lt;extension-id&gt;.chromiumapp.org/</code></pre>
+      <p>Paste that <strong>exact</strong> URI into your OAuth app’s allowed redirect URLs.</p>
+
+      <h2>3. Client ID</h2>
+      <p>For self-hosted / developer builds, paste the OAuth Client ID into <code>shared/oauth.js</code>:</p>
+      <pre><code>const CLIENT_ID = "your-client-id-here";</code></pre>
+      <p>Reload the extension, accept the agreement, and click <strong>Connect Roblox</strong>.</p>
+
+      <div class="docs-callout">
+        <p>
+          <strong>Never</strong> put a client secret in the extension package. Clear
+          storage in options removes local tokens. Revoking the app in Roblox account
+          settings also ends access.
+        </p>
+      </div>
+
+      <h2>Troubleshooting</h2>
+      <ul>
+        <li><strong>Redirect mismatch</strong> — URI must match character-for-character, including trailing slash.</li>
+        <li><strong>Invalid client</strong> — check Client ID and that the OAuth app is approved.</li>
+        <li><strong>Context invalidated</strong> — reload extension after code changes, refresh Roblox tabs.</li>
+      </ul>
+
+      <footer class="docs-footer">
+        <a href="./getting-started.html">← Getting started</a>
+      </footer>
+    </article>
+    <script src="./assets/docs.js"></script>
+  </body>
+</html>
